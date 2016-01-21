@@ -1,8 +1,7 @@
 {
   "name": "rekordo",
-  "description": "REST API",
+  "description": "rekordo API",
   "version": "0.0.1",
-  "private": true,
   "author": {
 	    "name": "luisan00",
 	    "email": "luisan00@rgbplex.com",
