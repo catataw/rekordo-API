@@ -33,7 +33,6 @@ connect(uriDB, optionsDB, function(res){
  });
  
  /**
-  * 
   * @param txid
   * @param callback
   */
@@ -73,10 +72,10 @@ function findHash(hash, callback){
   */
 function insertNewHash(uploadedHash, callback) {
 	var document = new hashModel({
-								hash : uploadedHash,
-								dateOrder : new Date(),
-								keyPair: btc()
-								});
+				hash : uploadedHash,
+				dateOrder : new Date(),
+				keyPair: btc()
+				});
 		document.save(function (err, response) {
 			  if (!err) {
 				  callback(null, response);
@@ -101,14 +100,12 @@ function processHash(hash, callback) {
 		{																	
 			insertNewHash(hash, function(err, added) {					
 				if (added) {
-					callback({'record' : 'new', 'document' : added});	// 	
+					callback({'record' : 'new', 'document' : added});	
 				}
 				else {		
-					callback(null);											
-								
+					callback(null);
 				}
 			});
-
 		}
 	})
 };
