@@ -5,7 +5,6 @@
  * See LICENSE file for more information.
  * 
  */
-
  var mongoose = require('mongoose');
  var config = require('../../config/config.js'); 
  var uriDB = config.uri;
@@ -24,7 +23,6 @@
 	 })
  }
  
- 
 connect(uriDB, optionsDB, function(res){
 	 if (res){
 		 console.log('[OK] connected to mongodb server to: %s', uriDB)
@@ -32,7 +30,7 @@ connect(uriDB, optionsDB, function(res){
 	 else {
 		 console.log('[ERROR] connecting to mongodb server to: %s', uriDB)
 	 }
- })
+ });
  
  /**
   * 
@@ -50,7 +48,7 @@ connect(uriDB, optionsDB, function(res){
 			callback(null);
 		}
 	})
-}
+};
 
  /**
   * @param hash : this hash, string type, will be searched in the database.
