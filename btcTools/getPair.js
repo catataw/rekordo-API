@@ -4,7 +4,6 @@
  * This application is under a (MIT) license.
  * See LICENSE file for more information. 
  */
-
 var bitcore = require('bitcore');
 var net = require('../config/config').bitcoin.net;
 
@@ -23,8 +22,6 @@ function getPairAsync(cb){
 				pubKey: address.toString()
 				});
 }
-exports.getPairAsync = getPairAsync;
-
 
 /**
  * @param net : TESTNET = 1, LIVENET = 0
@@ -42,4 +39,6 @@ function getPairSync(){
 	return({prvKey: privateKey.toWIF(),
 			pubKey: address.toString()})
 };
+
+exports.getPairAsync = getPairAsync;
 exports.getPairSync = getPairSync;
