@@ -7,7 +7,6 @@
  * - Main Application file -
  * 
  **/
-
 var express = require('express');
 var bodyParser  = require('body-parser');
 var path = require('path');
@@ -17,26 +16,24 @@ var config = require('./config/config');
 var api = config.api;
 var price = config.prices;
 var response = require('./config/messages').response;
-
 var db = require('./database/tools/hash.js');
 var processHash = db.processHash;
 var insertNewHash = db.insertNewHash;
-var getTx = require('./helpers/insightWrapper.js').getTx;
-/**/
+var getTx = require('./helpers/insightWrapper').getTx;
 var app = express();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view cache', api.cache);
 
-
 /** -- GET method -- routes */
-/* GET /api/query/:hashid (one) record only*/
+/* /api/query/:hashid (one) record only*/
 app.get('/api/query/:hashid', function(req, res) {
 	var hash = req.params.hashid
 	var hashes = hash.split(",")
 	console.log('GET /api/query/%s', hashes)
 	if (hashes.length ==1){
-	/** Basic security based in a hash only by the moment and length equal to 64 */
+	/** One Hash Only */
 		processHash(hash, function(data){
 			switch (data.record){
 				case 'new':
@@ -94,7 +91,7 @@ app.get('/api/query/:hashid', function(req, res) {
 		res.end()
 	}
 })
-/* GET TX */
+/* /api/tx/:txid */
 app.get('/api/tx/:id', function(req, res){
 	var txid = req.params.id
 	console.log(txid)
@@ -120,8 +117,7 @@ app.get('/api/tx/:id', function(req, res){
 /* -- POST method -- routes  */
 app.post('/api/query/', function (req, res) {
 	var body = req.body
-	/** Basic security based in a hash only by the moment and length equal to 64 */
-	//console.log(bodyParser(req.hostname, res, function(e,a){console.log(e||a)}))
+	/** One Hash Only */
 	var payload = body.hash
 	console.log('request: %s, %s record/s', payload, payload.length)
 	if (body.hash.length==1){
