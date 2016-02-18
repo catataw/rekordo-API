@@ -10,16 +10,13 @@
 
 /* api options */
 var api = {
-		port : 9000,
-		cache: false
+		port : API_port,
+		cache: true
 };
 
 /*prices options*/
 var prices = { 
-			user: 400000,
-			user_n: 300000, 
-			guest: 500000,
-			guest_n: 400000
+	guest: 300000
 };
 /* database options*/
 var uri = 'mongodb://MONGODB_HOST';
@@ -46,7 +43,7 @@ var bitcoin = {
 /* route to the host explorer */
 var explorer = {
 		host : 'explorer_host',
-		port : 3001 // use 3000 for LIVENET
+		port : your_explorer_port
 };
 
 /* the timer between checks t*/
