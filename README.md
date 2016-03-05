@@ -1,5 +1,5 @@
 # rekordo-API
-**rekordo**  is composed of the web-frontend and the backend service or API, this repository is for the backend or API, for the frontend visit <a href="https://github.com/luisan00/rekordo">**rekordo**</a>
+<a href="https://www.rekordo.io">**rekordo.io**</a>  is composed of the web-frontend and the backend service or API, this repository is for the backend or API, for the frontend visit <a href="https://github.com/luisan00/rekordo">**rekordo**</a>
 ## Usage
 Before running the aplication need some requirements and dependencies:
 - node.js 0.12.7 or greater
