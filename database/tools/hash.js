@@ -1,6 +1,6 @@
 /**
  * rekordo.io
- * (c) 2015 luisan00
+ * (c) 2015-2016 luisan00
  * This application is under a (MIT) license.
  * See LICENSE file for more information.
  * 
