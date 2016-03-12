@@ -94,7 +94,7 @@ function insertNewHash(uploadedHash, callback) {
 function processHash(hash, callback) {
 	findHash(hash, function(data){ 											
 		if (data) {													
-			callback({'record': 'exist', 'document': data});				//record exist in DB return the document		
+			callback({'record': 'exist', 'document': data});		
 		}
 		else 																
 		{																	
